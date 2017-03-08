@@ -68,7 +68,7 @@ func readConfig(filename string) map[string]string {
 		if trimmed == "" || trimmed[0] == '#' {
 			continue
 		}
-		parts := strings.Split(line, "=")
+		parts := strings.SplitN(line, "=", 2)
 		if len(parts) != 2 {
 			log.Fatalf("Invalid config line: %s", line)
 		}
